@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -22,7 +23,7 @@ public class Customer {
     private String phoneNumber;
     private String billingAddress;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "customer")
     private List<FlowersOrder> orders;
 
 

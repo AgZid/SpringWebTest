@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +21,7 @@ public class FlowersOrder {
     private String orderDate;
     private String orderDeadlineDate;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "flowerOrders")
     private List<Flower> flowers;
 
     @ManyToOne(cascade = CascadeType.ALL)
